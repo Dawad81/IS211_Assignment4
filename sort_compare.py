@@ -86,15 +86,15 @@ def main():
     list_size = dict(list_size500=500, list_size1k=1000, list_size10k=10000)
     for test_list in list_size.values():
         r_list = get_me_random_list(test_list)
-        iter_count = 100
+        list_count = 100
         run_time_total = {'Insertion Sort': 0,
                           'Shell Sort': 0,
                           'Python Sort': 0}
-        while iter_count > 0:
+        while list_count > 0:
             run_time_total['Insertion Sort'] += insertion_sort(r_list)[1]
             run_time_total['Shell Sort'] += shell_sort(r_list)[1]
             run_time_total['Python Sort'] += python_sort(r_list)[1]
-            iter_count -= 1
+            list_count -= 1
         print "List of %s random #'s:" % test_list
         print "Insertion Sort took %10.7f seconds to run on average." % float(run_time_total['Insertion Sort'] / 100)
         print "Shell Sort took %10.7f seconds to run on average." % float(run_time_total['Shell Sort'] / 100)

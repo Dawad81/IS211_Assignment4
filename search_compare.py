@@ -116,17 +116,17 @@ def main():
     list_size = dict(list_size500=500, list_size1k=1000, list_size10k=10000)
     for test_list in list_size.values():
         r_list = get_me_random_list(test_list)
-        iter_count = 100
+        list_count = 100
         run_time_total = {'Sequential': 0,
                           'Ordered_sequential': 0,
                           'Binary_iterative': 0,
                           'Binary_recursive': 0}
-        while iter_count > 0:
+        while list_count > 0:
             run_time_total['Sequential'] += sequential_search(r_list, -1)[1]
             run_time_total['Ordered_sequential'] += ordered_sequential_search(r_list, -1)[1]
             run_time_total['Binary_iterative'] += binary_search_iterative(r_list, -1)[1]
             run_time_total['Binary_recursive'] += binary_search_recursive(r_list, -1)[1]
-            iter_count -= 1
+            list_count -= 1
         print "List of %s random #'s:" % test_list
         print "Sequential Search took %10.7f seconds to run on average." % float(run_time_total['Sequential'] / 100)
         print "Ordered Sequential Search took %10.7f seconds to run on average." % float(run_time_total['Ordered_sequential'] / 100)
