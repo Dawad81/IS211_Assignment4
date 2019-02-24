@@ -9,28 +9,20 @@ import random
 
 def sequential_search(a_list, item):
     """This is the Sequential Search Algorithm.
-
     Args:
-
         a_list (list): args to be serched for item.
         item (mixed): args to serch a_list for a match.
-
     Returns:
-
         tuple: returns a tuple with the first item in the tuple being a boolean
         (True/False) if item was found in a_list. The second item in the tuple
         is the time it took for the function to run.
-
     Example:
-
         >>> test_list1 = [1, 2, 32, 8, 17, 19, 42, 13, 0]
         >>> print sequential_search(test_list1, -1)
         (False, 4.0531158447265625e-06)
-
         >>> test_list1 = [1, 2, 32, 8, 17, 19, 42, 13, 0]
         >>> print sequential_search(test_list1, 42)
         (True, 5.9604644775390625e-06)
-
     """
     start = time.time()
     pos = 0
@@ -45,25 +37,18 @@ def sequential_search(a_list, item):
 
 
 def ordered_sequential_search(a_list, item):
-    """This is the Orderd Sequential Search Algorithm.
-
+    """This is the Ordered Sequential Search Algorithm.
     Args:
-
         a_list (list): args to be serched for item.
         item (mixed): args to serch a_list for a match.
-
     Returns:
-
         tuple: returns a tuple with the first item in the tuple being a boolean
         (True/False) if item was found in a_list. The second item in the tuple
         is the time it took for the function to run.
-
     Example:
-
-        >>>>>> test_list2 = [0, 1, 2, 8, 13, 17, 19, 32, 42,]
+        >>> test_list2 = [0, 1, 2, 8, 13, 17, 19, 32, 42,]
         >>> print ordered_sequential_search(test_list2, -1)
         (False, 9.5367431640625e-07)
-
         >>> test_list2 = [0, 1, 2, 8, 13, 17, 19, 32, 42,]
         >>> print ordered_sequential_search(test_list2, 17)
         (True, 5.9604644775390625e-06)
@@ -87,24 +72,17 @@ def ordered_sequential_search(a_list, item):
 
 def binary_search_iterative(a_list, item):
     """This is the Binary Search Iterative Algorithm.
-
     Args:
-
         a_list (list): args to be serched for item.
         item (mixed): args to serch a_list for a match.
-
     Returns:
-
         tuple: returns a tuple with the first item in the tuple being a boolean
         (True/False) if item was found in a_list. The second item in the tuple
         is the time it took for the function to run.
-
     Example:
-
         >>> test_list3 = [0, 1, 2, 8, 13, 17, 19, 32, 42,]
         >>> print binary_search_iterative(test_list3, -1)
         (False, 3.0994415283203125e-06)
-
         >>> test_list3 = [0, 1, 2, 8, 13, 17, 19, 32, 42,]
         >>> print binary_search_iterative(test_list3, 8)
         (True, 5.9604644775390625e-06)
@@ -129,24 +107,17 @@ def binary_search_iterative(a_list, item):
 
 def binary_search_recursive(a_list, item):
     """This is the Binary Search Recursive Algorithm.
-
     Args:
-
         a_list (list): args to be serched for item.
         item (mixed): args to serch a_list for a match.
-
     Returns:
-
         tuple: returns a tuple with the first item in the tuple being a boolean
         (True/False) if item was found in a_list. The second item in the tuple
         is the time it took for the function to run.
-
     Example:
-
         >>> test_list4 = [0, 1, 2, 8, 13, 17, 19, 32, 42,]
         >>> print binary_search_recursive(test_list4, -1)
         (False, 0.0)
-
         >>> test_list4 = [0, 1, 2, 8, 13, 17, 19, 32, 42,]
         >>> print binary_search_recursive(test_list4, 42)
         (True, 9.5367431640625e-07)
@@ -155,12 +126,12 @@ def binary_search_recursive(a_list, item):
     start = time.time()
     if len(a_list) == 0:
         end = time.time()
-        found = False #, end - start
+        found = False
     else:
         midpoint = len(a_list) // 2
         if a_list[midpoint] == item:
             end = time.time()
-            found = True #, end - start
+            found = True
         else:
             if item < a_list[midpoint]:
                 return binary_search_recursive(a_list[:midpoint], item)
@@ -172,13 +143,10 @@ def binary_search_recursive(a_list, item):
 
 def get_me_random_list(number):
     """Generates a list of number elements in random order.
-
     Args:
         number (int): Args to creat number of elements in the list
-
     Returns:
         list: A list with number elements in random order
-
     Example:
         >>> get_me_random_list(200)
         [186, 41, 145, 164, 13, 113, 44, 127, 32, 197, 193, 15, 23, 31, 73, 65,
@@ -202,27 +170,20 @@ def get_me_random_list(number):
 
 def main():
     """This function test the run time of sequential_search(),
-    ordered_sequential_search(), binary_search_iterative(), binary_search_recursive().
-
+    ordered_sequential_search(), binary_search_iterative(),
+    binary_search_recursive().
     Returns:
         5 str: for each item in list_size:
-
             str1: Length of the list of random numbers that was tested.
-
             str2: Average run time of sequential_search(), on 100 list of random
             numbers, of the length stated in str1.
-
             str3: Average run time of ordered_sequential_search(), on 100 list
             of random numbers, of the length stated in str1.
-
             str4: Average run time of binary_search_iterative(), on 100 list of
             random numbers, of the length stated in str1.
-
             str5: Average run time of binary_search_recursive(), on 100 list of
             random numbers, of the length stated in str1.
-
     Example:
-
         ========== List of 10000 random #'s: ==========
         Sequential Search took  0.0015114 seconds to run on average.
         Ordered Sequential Search took  0.0000013 seconds to run on average.
@@ -249,15 +210,22 @@ def main():
                           'Binary_recursive': 0}
         while list_count > 0:
             run_time_total['Sequential'] += sequential_search(r_list, -1)[1]
-            run_time_total['Ordered_sequential'] += ordered_sequential_search(r_list, -1)[1]
-            run_time_total['Binary_iterative'] += binary_search_iterative(r_list, -1)[1]
-            run_time_total['Binary_recursive'] += binary_search_recursive(r_list, -1)[1]
+            run_time_total['Ordered_sequential'] += ordered_sequential_search(
+                r_list, -1)[1]
+            run_time_total['Binary_iterative'] += binary_search_iterative(
+                r_list, -1)[1]
+            run_time_total['Binary_recursive'] += binary_search_recursive(
+                r_list, -1)[1]
             list_count -= 1
         print '=' * 10, "List of %s random #'s:" % test_list, '=' * 10
-        print "Sequential Search took %10.7f seconds to run on average." % float(run_time_total['Sequential'] / 100)
-        print "Ordered Sequential Search took %10.7f seconds to run on average." % float(run_time_total['Ordered_sequential'] / 100)
-        print "Binary Search Iterative took %10.7f seconds to run on average." % float(run_time_total['Binary_iterative'] / 100)
-        print "Binary Search Recursive took %10.7f seconds to run on average." % float(run_time_total['Binary_recursive'] / 100)
+        print "Sequential Search took %10.7f seconds to run on average." % \
+              float(run_time_total['Sequential'] / 100)
+        print "Ordered Sequential Search took %10.7f seconds to run on average."\
+              % float(run_time_total['Ordered_sequential'] / 100)
+        print "Binary Search Iterative took %10.7f seconds to run on average."\
+              % float(run_time_total['Binary_iterative'] / 100)
+        print "Binary Search Recursive took %10.7f seconds to run on average."\
+              % float(run_time_total['Binary_recursive'] / 100)
 
 
 if __name__ == '__main__':
