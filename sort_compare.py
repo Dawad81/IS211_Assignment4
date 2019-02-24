@@ -8,12 +8,15 @@ import time
 
 def insertion_sort(a_list):
     """This is the Insertion Sort Algorithm.
+
     Args:
         a_list (list): args to be sorted.
+
     Returns:
         tuple: returns a tuple with the first item in the tuple being a_list
         sorted. The second item in the tuple is the time it took for the
         function to run.
+
     Example:
         >>> a_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
         >>> insertion_sort(a_list)
@@ -33,12 +36,15 @@ def insertion_sort(a_list):
 
 def shell_sort(a_list):
     """This is the Shell Sort Algorithm.
+
     Args:
         a_list (list): args to be sorted.
+
     Returns:
         tuple: returns a tuple with the first item in the tuple being a_list
         sorted. The second item in the tuple is the time it took for the
         function to run.
+
     Example:
         >>> a_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
         >>> shell_sort(a_list)
@@ -67,12 +73,15 @@ def gap_insertion_sort(a_list, start, gap):
 
 def python_sort(input_list):
     """This is the Python Sort Algorithm.
+
     Args:
         a_list (list): args to be sorted.
+
     Returns:
         tuple: returns a tuple with the first item in the tuple being a_list
         sorted. The second item in the tuple is the time it took for the
         function to run.
+
     Example:
         >>> a_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
         >>> python_sort(a_list)
@@ -86,10 +95,13 @@ def python_sort(input_list):
 
 def get_me_random_list(number):
     """Generates a list of number elements in random order.
+
     Args:
-        number (int): Args to creat number of elements in the list
+        number (int): Args to creat number of elements in the list.
+
     Returns:
-        list: A list with number elements in random order
+        list: A list with number elements in random order.
+
     Example:
         >>> get_me_random_list(200)
         [186, 41, 145, 164, 13, 113, 44, 127, 32, 197, 193, 15, 23, 31, 73, 65,
@@ -114,15 +126,20 @@ def get_me_random_list(number):
 def main():
     """This function test the run time of insertion_sort(), shell_sort(),
     python_sort().
+
     Returns:
         4 str: for each item in list_size:
             str1: Length of the list of random numbers that was tested.
+
             str2: Average run time of insertion_sort(), on 100 list of random
             numbers, of the length stated in str1.
+
             str3: Average run time of shell_sort(), on 100 list
             of random numbers, of the length stated in str1.
+
             str4: Average run time of python_sort(), on 100 list of
             random numbers, of the length stated in str1.
+
     Example:
         ========== List of 10000 random #'s: ==========
         Insertion Sort took  0.0404678 seconds to run on average.
